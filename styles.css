@@ -26,7 +26,12 @@ h1 {
 .post {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 3em;
+}
+
+.post-text h2 {
+    margin-top: 0;
 }
 
 .img-date {
@@ -37,7 +42,7 @@ h1 {
     width: 68%;
 }
 
-.img-date img {
+.img-date img, .about-me-img {
     width: 100%;
 }
 
@@ -57,7 +62,7 @@ header {
     align-items: center;
 }
 
-main {
+.home-main-container, .about-me-main-container, .recent-post-main-container {
     /* border: 1px magenta solid; */
     width: 55%;
     margin: 0 auto;
@@ -220,7 +225,7 @@ h2 {
     STYLING
 //////////////// */
 
-.h1-para {
+.h1-para, .about.main-container h2 {
     color:#0088cc;
 }
 
@@ -240,12 +245,39 @@ hr {
  color: #4d4d4d;   
 }
 
+
+/* /////////////
+    ABOUT ME HTML 
+//////////////// */
+
+.about.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-img {
+    order: -1;
+}
+
+.about.main-container h1 {
+    color: #003366;
+    margin-top: 1em ;
+}
+
+.about.main-container p {
+    margin-bottom: 0.2em;
+}
+
+
 /* /////////////
     MOBILE SCREEN 
 //////////////// */
 
 @media (min-width: 360px) and (max-width: 675px){
-    main, .header-container {
+    .home-main-container,
+    .about-me-main-container,
+    .header-container,
+    .recent-post-main-container {
         display: flex;
         flex-direction: column;
         padding: 2em 0;
@@ -253,7 +285,7 @@ hr {
         align-items: center;
     }
 
-    main {
+    .home-main-container {
         padding-left: 0;
         padding-right: 0;
     }
@@ -303,4 +335,12 @@ hr {
         object-fit: cover;
         height: 50%;
     }
+
+    .about-me-hr {
+        border: 0.001em #d8d7d7 solid;
+        margin: 1em 0;
+        width: 100%;
+    }
+    
+
 }
